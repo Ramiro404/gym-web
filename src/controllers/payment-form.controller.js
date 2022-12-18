@@ -5,6 +5,8 @@ import {membershipService} from '../services/membership.service';
 import {clientService} from '../services/client.service';
 import queryString from 'query-string';
 import { DateFormatter } from '../utils/DateFormatter';
+import navbar from  '../views/navbar.html';
+import moment from 'moment'
 
 class PaymentForm {
     constructor() {}
@@ -15,6 +17,9 @@ class PaymentForm {
         }
         const divElement = document.createElement('div');
         divElement.innerHTML = view;
+
+        const navbarElement = divElement.querySelector('#navbar');
+        navbarElement.innerHTML = navbar;
 
         const formElement = divElement.querySelector('#form');
         const clientElement = divElement.querySelector('#client-data');
@@ -37,10 +42,7 @@ class PaymentForm {
         clientElement.textContent = `Client: ${client.name} ${client.lastname}`;
         let defaultMembership = memberships.filter(m => m.id === payment[0].membership_id)[0];
         priceElement.textContent = `$${defaultMembership.price}`;
-        
-        const dateFormatted = DateFormatter.FormatDateForInput(payment[0].last_payment);
-        paymentDateElement.value = dateFormatted;
-        console.log(dateFormatted, ' ', payment[0].last_payment)
+        paymentDateElement.value = moment(payment[0].last_payment).add(1, 'months').format('YYYY-MM-DD');
         
         memberships.forEach(membership => {
             membershipElement.innerHTML += `

@@ -4,7 +4,7 @@ const content = document.getElementById('root');
 const router = async (route) => {
     content.innerHTML = '';
     if (route === '#/')
-        return content.appendChild(pages.home());
+        return content.appendChild(await pages.home());
     if (route === '#/login')
         return content.appendChild(pages.login());
     if (route === '#/login')
@@ -17,6 +17,8 @@ const router = async (route) => {
         return content.appendChild(await pages.profile());
     if (route === '#/add-client')
         return content.appendChild(await pages.clientForm());
+    if (route.includes('#/client/delete/?clientId='))
+        return content.appendChild(await pages.clientDelete());
     if (route.includes('#/client/edit/?clientId'))
         return content.appendChild(await pages.clientEdit());
     if (route.includes('#/client/add-payment/?clientId'))
@@ -32,6 +34,7 @@ const router = async (route) => {
     if (route === '#/300') {
         return content.appendChild( pages.unauthorized());
     }
+    return content.appendChild(pages.notFound());
 }
 
 export { router };

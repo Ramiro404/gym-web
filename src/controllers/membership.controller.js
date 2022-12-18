@@ -21,10 +21,18 @@ class MembershipController {
         const data = await response.json();
         data.forEach(membership => {
             membershipElement.innerHTML += `
-            <h3>${membership.name}</h3>
-            <p>${membership.description}</p>
-            <h5>${membership.price}</h5>
-            <a href="/#/membership/form/?membershipId=${membership.id}">Edit</a>
+            <div class="card span-3">
+                <div class="card-title">
+                    <h2 class="mb-0">${membership.name}</h2>
+                </div>
+                <div class="card-body">
+                    <p class="mb-0">${membership.description}</p>
+                </div>
+                <div class="card-footer">
+                    <h3 class="mb-0">$${membership.price}</h3>
+                    <a class="primary" href="/#/membership/form/?membershipId=${membership.id}">Edit</a>
+                </div>
+            </card>
         `;
         });
         return divElement;

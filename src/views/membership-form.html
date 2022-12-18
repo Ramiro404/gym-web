@@ -1,15 +1,24 @@
-<form id="form">
-    <fieldset>
-        <legend>Membership</legend>
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name" required>
-        <br>
-        <label for="price">Price</label>
-        <input type="number" name="price" id="price" min="0" required>
-        <br>
-        <label for="description">Description</label>
-        <textarea name="description" id="description" cols="30" rows="10" required></textarea>
-        <br>
-        <button type="submit">Save Membership</button>
-    </fieldset>
-</form>
+<div class="width-container">
+    <div class="grid col-12">
+        <div class="span-2">
+            <div id="navbar"></div>
+        </div>
+        <div class="span-10">
+            <form id="form">
+                <fieldset>
+                    <legend>Membership</legend>
+                    <label for="name">Name</label>
+                    <input class="input-control" type="text" name="name" id="name" required>
+                    <br>
+                    <label for="price">Price</label>
+                    <input class="input-control" type="number" name="price" id="price" min="0" required>
+                    <br>
+                    <label for="description">Description</label>
+                    <textarea class="input-control" name="description" id="description" cols="30" rows="10" required></textarea>
+                    <br>
+                    <button class="btn btn-primary" type="submit">Save Membership</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>

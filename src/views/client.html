@@ -1,26 +1,44 @@
-<div id="navbar"></div>
-<form id="clientForm">
-    <fieldset>
-        <legend>Search a client</legend>
-        <input type="search" placeholder="Search" name="search" id="search" />
-        <button type="submit">Sear</button>
-    </fieldset>
-</form>
+  
 
-<!--<div id="clients"></div>-->
-<a href="#/add-client">New client</a>
-<table>
-    <thead>
-        <tr>
-            <th>Full name</th>
-            <th>Birthdate</th>
-            <th>Payment date</th>
-            <th>Status</th>
-            <th>Edit</th>
-            <th>Add payment</th>
-            <th>Delete</th>
-        </tr>
-    </thead>
-    <tbody id="client-table">
-    </tbody>
-</table>    
+<div class="width-container">
+    <div class="grid col-12">
+        <div class="span-2">
+            <div id="navbar"></div>
+        </div>
+        <div class="span-10">
+            <form id="clientForm">
+                <fieldset>
+                    <legend>Search a client</legend>
+                    <input class="input-control" type="search" placeholder="Search" name="search" id="search" />
+                    <button class="btn btn-black" type="submit">Search</button>
+                </fieldset>
+            </form>
+            
+            <!--<div id="clients"></div>-->
+            <a class="btn btn-primary" href="#/add-client">New client</a>
+            <label for="order">Order by</label>
+            <select name="order" id="order">
+                <option selected value="last_payment">Payment date</option>
+                <option value="name">Name</option>
+            </select>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Full name</th>
+                        <th>Birthdate</th>
+                        <th>Payment date</th>
+                        <th>Expires at (days)</th>
+                        <th>Edit</th>
+                        <th>Add payment</th>
+                        <th>Active</th>
+                        <th>History</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="client-table">
+                </tbody>
+            </table>  
+        </div>
+    </div>
+</div>

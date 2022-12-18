@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+:root {
+    --width-container: 1200px;
+    --primary: #AD974F;
+    --secondary: #8E793E;
+    --black: #231F20;
+    --black-1: rgb(54, 50, 51);
+    --gray: rgb(57,62,68);
+    --white: #EAEAEA;
+    --danger: rgba(255, 0, 0, 0.774);
+    --font: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: var(--black);
+    color: var(--white);
+    font-family: var(--font);
+}
+
+p {
+    line-height: 27px;
+}
+
+img {
+    vertical-align: top;
+    width: 100%;
+}
+
+.container {
+    max-width: 90%;
+    width: var(--width-container);
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.width-container{
+    width: 100%;
+    padding: 0 40px;
+    margin: 20px auto;
+}
+
+.grid {
+    display: grid;
+    gap: 20px;
+    margin: 20px;
+}
+
+.col-1 { grid-template-columns: repeat(1, 1fr); }
+.col-2 { grid-template-columns: repeat(2, 1fr); }
+.col-3 { grid-template-columns: repeat(3, 1fr); }
+.col-4 { grid-template-columns: repeat(4, 1fr); }
+.col-5 { grid-template-columns: repeat(5, 1fr); }
+.col-6 { grid-template-columns: repeat(6, 1fr); }
+.col-7 { grid-template-columns: repeat(7, 1fr); }
+.col-8 { grid-template-columns: repeat(8, 1fr); }
+.col-9 { grid-template-columns: repeat(9, 1fr); }
+.col-10 { grid-template-columns: repeat(10, 1fr); }
+.col-11 { grid-template-columns: repeat(11, 1fr); }
+.col-12 { grid-template-columns: repeat(12, 1fr); }
+
+.span-1 { grid-column: span 1; }
+.span-2 { grid-column: span 2; }
+.span-3 { grid-column: span 3; }
+.span-4 { grid-column: span 4; }
+.span-5 { grid-column: span 5; }
+.span-6 { grid-column: span 6; }
+.span-7 { grid-column: span 7; }
+.span-8 { grid-column: span 8; }
+.span-9 { grid-column: span 9; }
+.span-10 { grid-column: span 10; }
+.span-11 { grid-column: span 11; }
+.span-12 { grid-column: span 12; }
+
+@media screen and (max-width: 992px) {
+	.col-md-1 { grid-template-columns: repeat(1, 1fr); }
+	.col-md-2 { grid-template-columns: repeat(2, 1fr); }
+	.col-md-3 { grid-template-columns: repeat(3, 1fr); }
+	.col-md-4 { grid-template-columns: repeat(4, 1fr); }
+	.col-md-5 { grid-template-columns: repeat(5, 1fr); }
+	.col-md-6 { grid-template-columns: repeat(6, 1fr); }
+	.col-md-7 { grid-template-columns: repeat(7, 1fr); }
+	.col-md-8 { grid-template-columns: repeat(8, 1fr); }
+	.col-md-9 { grid-template-columns: repeat(9, 1fr); }
+	.col-md-10 { grid-template-columns: repeat(10, 1fr); }
+	.col-md-11 { grid-template-columns: repeat(11, 1fr); }
+	.col-md-12 { grid-template-columns: repeat(12, 1fr); }
+
+	.span-md-1 { grid-column: span 1; }
+	.span-md-2 { grid-column: span 2; }
+	.span-md-3 { grid-column: span 3; }
+	.span-md-4 { grid-column: span 4; }
+	.span-md-5 { grid-column: span 5; }
+	.span-md-6 { grid-column: span 6; }
+	.span-md-7 { grid-column: span 7; }
+	.span-md-8 { grid-column: span 8; }
+	.span-md-9 { grid-column: span 9; }
+	.span-md-10 { grid-column: span 10; }
+	.span-md-11 { grid-column: span 11; }
+	.span-md-12 { grid-column: span 12; }
+}
+
+@media screen and (max-width: 576px) {
+	.col-sm-1 { grid-template-columns: repeat(1, 1fr); }
+	.col-sm-2 { grid-template-columns: repeat(2, 1fr); }
+	.col-sm-3 { grid-template-columns: repeat(3, 1fr); }
+	.col-sm-4 { grid-template-columns: repeat(4, 1fr); }
+	.col-sm-5 { grid-template-columns: repeat(5, 1fr); }
+	.col-sm-6 { grid-template-columns: repeat(6, 1fr); }
+	.col-sm-7 { grid-template-columns: repeat(7, 1fr); }
+	.col-sm-8 { grid-template-columns: repeat(8, 1fr); }
+	.col-sm-9 { grid-template-columns: repeat(9, 1fr); }
+	.col-sm-10 { grid-template-columns: repeat(10, 1fr); }
+	.col-sm-11 { grid-template-columns: repeat(11, 1fr); }
+	.col-sm-12 { grid-template-columns: repeat(12, 1fr); }
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+	margin-top: 0;
+}
+
+.display-1 {
+	font-weight: 700;
+	font-size: 64px;
+}
+
+.display-2 {
+	font-weight: 700;
+	font-size: 54px;
+}
+
+.display-3 {
+	font-weight: 700;
+	font-size: 44px;
+}
+
+.nav {
+    list-style-type: none;
+    width: 100%;
+    
+
+    display: flex;
+    flex-direction: column;
+}
+
+.nav a {
+    padding: 8px 16px;
+    text-decoration: none;
+    background-color: var(--primary);
+    color: var(--black);
+}
+
+.nav a.active{
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.nav a:hover {
+    background-color: var(--secondary);
+    color: var(--black);
+}
+
+
+.btn {
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 15px;
+    text-align: center;
+    line-height: 22px;
+    background-color: var(--black);
+    color: var(--white);
+    transition: .3s ease all;
+}
+
+
+.btn-primary {
+    text-decoration: none;
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.btn-secondary {
+    background-color: var(--secondary);
+    color: var(--white);
+}
+
+.btn-black {
+    background-color: var(--black);
+    color: var(-white);
+    border: 1px var(--white) solid;
+}
+
+table {
+    overflow-x: auto;
+}
+th, td {
+    border-bottom: 1px solid #ddd;
+}
+
+ td a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+a.danger {
+    color: var(--danger)
+}
+
+table {
+    width: 100%;
+}
+td{
+    padding: 5px;
+}
+
+th {
+    height: 50px;
+}
+tr:nth-child(even) {
+    background-color: var(--black-1);
+}
+tr:hover {
+    background-color: var(--primary);
+    color: var(--black);
+}
+a.primary {
+    color: var(--primary);
+    text-shadow: none;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    background-color: var(--gray);
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    padding: 1rem;
+}
+
+.card-title{
+
+}
+
+.card-body{
+
+}
+
+.card-footer{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.input-control {
+    width: 100%;
+    background-color: var(--gray);
+    color: var(--white);
+    padding: 12px 20px;
+    margin: 8px;
+    border: none;
+    border-bottom: 2px solid var(--primary);
+}
+
+mb-0{ margin-bottom: 0;}
+mt-0{ margin-top: 0;}
+ml-0{ margin-left: 0;}
+mr-0{ margin-right: 0;}

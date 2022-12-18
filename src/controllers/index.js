@@ -8,8 +8,10 @@ import ClientEdit from './client-edit.controller';
 import PaymentForm from './payment-form.controller';
 import PaymentHistory from './payment-history.controller';
 import MembershipForm from './membership-form.controller';
+import ClientDelete from './client-delete.controller';
 import Logout from './logout.controller';
-import Unauthorized from './unauthorized.controller'
+import Unauthorized from './unauthorized.controller';
+import NotFound from './not-found.controller';
 const pages = {
     home: Home,
     login: Login,
@@ -21,8 +23,10 @@ const pages = {
     paymentForm: PaymentForm,
     paymentHistory: PaymentHistory,
     membershipForm: MembershipForm,
+    clientDelete: ClientDelete,
     logout: Logout,
-    unauthorized: Unauthorized
+    unauthorized: Unauthorized,
+    notFound: NotFound,
 };
 
 export {pages};

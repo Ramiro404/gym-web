@@ -5,6 +5,7 @@ import {clientService} from '../services/client.service';
 import {DateFormatter} from '../utils/DateFormatter';
 import queryString from 'query-string';
 import { tokenService } from '../services/token.service';
+import moment from 'moment';
 
 class ClientEditController{
     constructor() {}
@@ -22,6 +23,8 @@ class ClientEditController{
         const name = divElement.querySelector('#name');
         const lastname = divElement.querySelector('#lastname');
         const birthdate = divElement.querySelector('#birthdate');
+        const radioActive = divElement.querySelector('#active');
+        const radioNoactive = divElement.querySelector('#noactive');
         const form = divElement.querySelector('#form');
         const urlParams = (window.location.href).split('?')[1];
         const params = queryString.parse(urlParams);
@@ -29,11 +32,20 @@ class ClientEditController{
         const client = await clientJson.json();
         console.log(client)
         name.value = client.name;
+        let active;
         lastname.value = client.lastname;
-        birthdate.value = DateFormatter.FormatDateForInput(new Date(client.birthdate));
+        if(client.active) {
+            active = true;
+            radioActive.checked = true
+        } else {
+            radioNoactive.checked = true;
+        }
+        //birthdate.value = DateFormatter.FormatDateForInput(new Date(client.birthdate));
+        birthdate.value = moment(client.birthdate).format("YYYY-MM-DD");
         form.addEventListener('submit', async(e)=>{
             e.preventDefault();
-            await clientService.update(client.id, { name: name.value, lastname: lastname.value, birthdate: birthdate.value});
+            console.log(radioActive.checked, ' ', radioNoactive.checked)
+            await clientService.update(client.id, { name: name.value, lastname: lastname.value, birthdate: birthdate.value, active: radioActive.checked });
             location.replace('/#/clients');
         });
         return divElement;

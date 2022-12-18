@@ -8,8 +8,8 @@ class ClientService {
     findAll() {
         return HttpService.Get(this.URL);
     }
-    findByBranchOffice(id) {
-        return HttpService.Get(`${this.URL}/branch-office/${id}`)
+    findByBranchOffice(id, order = 'last_payment', active = false ) {
+        return HttpService.Get(`${this.URL}/branch-office/${id}?order=${order}&active=${active}`)
     }
     save(data) {
         return HttpService.Post(`${this.URL}`, data);
@@ -28,6 +28,9 @@ class ClientService {
     }
     getPaymentHistory(id){
         return HttpService.Get(`${this.URL}/payment/${id}`);
+    }
+    delete(id) {
+        return HttpService.Delete(`${this.URL}/${id}`);
     }
 }
 const clientService = new ClientService();

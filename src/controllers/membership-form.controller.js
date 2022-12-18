@@ -3,6 +3,7 @@ import { membershipService } from '../services/membership.service';
 import queryString from 'query-string';
 import { authService } from '../services/auth.service';
 import { tokenService } from '../services/token.service';
+import navbar from "../views/navbar.html"
 
 class MembershipFormController {
     constructor(){}
@@ -14,6 +15,8 @@ class MembershipFormController {
 
         const divElement = document.createElement('div');
         divElement.innerHTML = view;
+        const navbarElement = divElement.querySelector("#navbar");
+        navbarElement.innerHTML = navbar;
 
         const name = divElement.querySelector('#name');
         const price = divElement.querySelector('#price');

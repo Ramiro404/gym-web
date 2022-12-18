@@ -1,13 +1,29 @@
-<div id="navbar"></div>
-<form id="form">
-    <label for="name">Name</label>
-    <input type="text" name="name" id="name" required>
-    <br>
-    <label for="lastname">Lastname</label>
-    <input type="text" name="lastname" id="lastname" required>
-    <br>
-    <label for="birthdate">Birthdate</label>
-    <input type="date" name="birthdate" id="birthdate">
-    <br>
-    <button type="submit">Save changes</button>
-</form>
+<div class="width-container">
+    <div class="grid col-12">
+        <div class="span-2">
+            <div id="navbar"></div>
+        </div>
+        <div class="span-10">
+            <fieldset>
+                <legend>Client Edit</legend>
+                <form id="form">
+                    <label for="name">Name</label>
+                    <input class="input-control" type="text" name="name" id="name" required>
+                    <br>
+                    <label for="lastname">Lastname</label>
+                    <input class="input-control" type="text" name="lastname" id="lastname" required>
+                    <br>
+                    <label for="birthdate">Birthdate</label>
+                    <input class="input-control" type="date" name="birthdate" id="birthdate">
+                    <br>
+                    <label for="active">Activo</label>
+                    <input  type="radio" name="active" id="active" value="active">
+                    <label for="active">Inactivo</label>
+                    <input  type="radio" name="active" id="noactive" value="inactive">
+                    <br>
+                    <button class="btn btn-primary" type="submit">Save changes</button>
+                </form>
+            </fieldset>
+        </div>
+    </div>
+</div>

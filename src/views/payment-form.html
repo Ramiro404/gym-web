@@ -1,11 +1,24 @@
-<form id="form">
-    <h1 id="client-data"></h1>
-    <label for="payment-date">Payment date</label>
-    <input type="date" name="payment-date" id="payment-date">
+<div class="width-container">
+    <div class="grid col-12">
+        <div class="span-2">
+            <div id="navbar"></div>
+        </div>
+        <div class="span-10">
+            <fieldset>
+                <legend>Payment</legend>
+                <form id="form">
+                    <h1 id="client-data"></h1>
+                    <label for="payment-date">Payment date</label>
+                    <input class="input-control" type="date" name="payment-date" id="payment-date">
+                    <br>
+                    <label for="membership">Membership</label>
+                    <select class="input-control" name="membership" id="membership">
+                    </select>
+                    <h2 class="display-3" id="price"></h2>
+                    <button class="btn btn-primary" type="submit">Confirm payment</button>
+                </form>
+            </fieldset>
 
-    <label for="membership">Membership</label>
-    <select name="membership" id="membership">
-    </select>
-    <h2 id="price"></h2>
-    <button type="submit">Confirm payment</button>
-</form>
+        </div>
+    </div>
+</div>
