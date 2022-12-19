@@ -34,6 +34,9 @@ const router = async (route) => {
     if (route === '#/300') {
         return content.appendChild( pages.unauthorized());
     }
+    if (route === '#/500') {
+        return content.appendChild( pages.error500());
+    }
     return content.appendChild(pages.notFound());
 }
 

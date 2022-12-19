@@ -54,7 +54,7 @@ class MembershipFormController {
                 branchOfficeId: user.branchOfficeId,
              });
             }
-            
+            location.replace('/#/memberships');
             //location.replace('/#/memberships')
         })
 

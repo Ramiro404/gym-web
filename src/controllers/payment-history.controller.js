@@ -2,6 +2,7 @@ import { tokenService } from '../services/token.service';
 import view from '../views/payment-history.html';
 import { clientService } from '../services/client.service';
 import queryString from 'query-string';
+import moment from 'moment';
 import navbar from '../views/navbar.html'
 class PaymentHistoryController{
     constructor(){}
@@ -26,11 +27,9 @@ class PaymentHistoryController{
             bodyDataElement.innerHTML += `
                 <tr>
                     <td>${element.name} ${element.lastname}</td>
-                    <td>${element.payment_date}</td>
                     <td>${element.code}</td>
-                    <td>${element.create_at}</td>
+                    <td>${moment(element.create_at).format("DD/MM/YYYY")}</td>
                     <td>${element.membership}</td>
-                    <td>${element.description}</td>
                     <td>${element.price}</td>
                 </tr>
             `

@@ -9,6 +9,7 @@ import PaymentForm from './payment-form.controller';
 import PaymentHistory from './payment-history.controller';
 import MembershipForm from './membership-form.controller';
 import ClientDelete from './client-delete.controller';
+import Error500 from './error-500.controller';
 import Logout from './logout.controller';
 import Unauthorized from './unauthorized.controller';
 import NotFound from './not-found.controller';
@@ -27,6 +28,7 @@ const pages = {
     logout: Logout,
     unauthorized: Unauthorized,
     notFound: NotFound,
+    error500: Error500
 };
 
 export {pages};
